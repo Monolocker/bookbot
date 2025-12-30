@@ -1,3 +1,5 @@
+from stats import word_count
+
 book_path = "books/frankenstein.txt" # use relative path books/frankenstein.txt, in global scope
 
 # book_path can also be in scope of main function 
@@ -12,9 +14,5 @@ def get_book_text(book_path):
         read_frankenstein = f.read() # can make this simply return f.read()
     
     return read_frankenstein
-
-def word_count(text):
-    words = text.split()
-    return len(words)
 
 main()
