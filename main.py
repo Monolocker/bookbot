@@ -3,7 +3,8 @@ book_path = "books/frankenstein.txt" # use relative path books/frankenstein.txt,
 # book_path can also be in scope of main function 
 def main(): 
     text = get_book_text(book_path)
-    print(text)
+    num_words = word_count(text)
+    print(f"Found {num_words} total words")
 
 
 def get_book_text(book_path):
@@ -11,5 +12,9 @@ def get_book_text(book_path):
         read_frankenstein = f.read() # can make this simply return f.read()
     
     return read_frankenstein
+
+def word_count(text):
+    words = text.split()
+    return len(words)
 
 main()
