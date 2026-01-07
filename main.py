@@ -1,4 +1,5 @@
 from stats import word_count
+from stats import char_count
 
 book_path = "books/frankenstein.txt" # use relative path books/frankenstein.txt, in global scope
 
@@ -7,7 +8,7 @@ def main():
     text = get_book_text(book_path)
     num_words = word_count(text)
     print(f"Found {num_words} total words")
-
+    print(char_count(text))
 
 def get_book_text(book_path):
     with open(book_path) as f:
