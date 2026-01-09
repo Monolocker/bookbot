@@ -20,12 +20,7 @@ def char_count(text):
             # add new char to dict as key and set initial count to 1
     return char_dict
 
-def text_report(char_dict):
-    dict_list = []
-    
-    for key, value in char_dict.items():
-        char_info = {"char": key, "num": value}
-        dict_list.append(char_info)
-
-    return dict_list
+def sort_on(dict_items):
+    # helper function for sorting, return "num" value to compare items
+    return dict_items["num"]
 
