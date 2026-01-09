@@ -24,3 +24,17 @@ def sort_on(dict_items):
     # helper function for sorting, return "num" value to compare items
     return dict_items["num"]
 
+def char_dict_to_sorted_list(char_dict):
+    # convert character dict to list of dicts
+    sorted_list = []
+
+    # transform each key-value pair into a dictionary w/ keys "char" and "num"
+    for key, value in char_dict.items():
+        char_info = {"char": key, "num": value} # value here not to be confused w/ value extracted from item["char"] or item["num"] 
+        sorted_list.append(char_info)
+    # sort in order of most frequently used to least
+    sorted_list.sort(reverse=True, key=sort_on)
+
+    return sorted_list
+
+
