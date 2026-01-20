@@ -18,17 +18,26 @@ def main():
     num_words = word_count(text)
     char_dict = char_count(text)
     char_sorted_list = char_dict_to_sorted_list(char_dict)
-    print(f"Found {num_words} total words")
-    for item in char_sorted_list: 
-        character = item["char"] # extract char
-        count = item["num"]      # extract count
-        if character.isalpha():  # only include letters
-            print(f"{character}: {count}")
+    print_report(book_path, num_words, char_sorted_list)
+
 
 def get_book_text(book_path):
     with open(book_path) as f:
         read_frankenstein = f.read() # can make this simply return f.read()
     
     return read_frankenstein
+
+def print_report(book_path, num_words, char_sorted_list):
+     print("============ BOOKBOT ============")
+     print(f"Analyzing book found at {book_path}")
+     print("----------- Word Count ----------")
+     print(f"Found {num_words} total words")
+     print("--------- Character Count -------")
+     for item in char_sorted_list: 
+        character = item["char"] # extract char
+        count = item["num"]      # extract count
+        if character.isalpha():  # only include letters
+            print(f"{character}: {count}")
+     print("============= END ===============")
 
 main()
