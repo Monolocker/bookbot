@@ -28,12 +28,10 @@ def char_dict_to_sorted_list(char_dict):
     # convert character dict to list of dicts
     sorted_list = []
 
-    # transform each key-value pair into a dictionary w/ keys "char" and "num"
-    for key, value in char_dict.items():
-        char_info = {"char": key, "num": value} # value here not to be confused w/ value extracted from item["char"] or item["num"] 
+    for character, count in char_dict.items():
+        char_info = {"char": character, "num": count} 
         sorted_list.append(char_info)
-    # sort in order of most frequently used to least
-    sorted_list.sort(reverse=True, key=sort_on)
+    sorted_list.sort(reverse=True, key=sort_on) # Sort by count, highest first
 
     return sorted_list
 
